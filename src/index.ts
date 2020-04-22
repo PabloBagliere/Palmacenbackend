@@ -1,9 +1,9 @@
-import express, {Application, Request, Response, NextFunction} from 'express';
+import { createConnection } from "typeorm";
+createConnection();
+import app from "./app";
+import { Routers } from "./routes/index.router";
+Routers();
 import "reflect-metadata";
 
-const app: Application = express();
-
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello");
-});
-app.listen(5000, () => console.log("server running"));
+app.listen(app.get('port'));
+console.log(`Listening on http://localhost:${app.get('port')}`);
