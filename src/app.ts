@@ -1,4 +1,5 @@
 import express, { Application, Request, Response, NextFunction } from "express";
+import rolRauter from "./routes/rol.router";
 const app: Application = express();
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
@@ -7,6 +8,6 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 
 app.use(express.json());
 
-app.set("port", process.env.PORT || 3000);
+app.use("/roles", rolRauter)
 
 export default app;

@@ -5,6 +5,7 @@ import { RolDTO } from "interfaces/roles.dto";
 
 @EntityRepository(Roles)
 export class RolesRepository extends Repository<Roles> {
+
   // Function for create role
   async create_Rol(description: string): Promise<Rol> {
     const temporal_Rol: Roles = new Roles();
@@ -37,8 +38,13 @@ export class RolesRepository extends Repository<Roles> {
 
   // Function for get all roles
   async get_All_Rol(): Promise<RolDTO[]> {
-    const temporal_Rol = this.find();
+    try {
+    const temporal_Rol = await this.find();
     return temporal_Rol;
+    } catch (error) {
+      console.log("ERROR: ", error)
+      return error;
+    }
   }
 
   // Function for update rol

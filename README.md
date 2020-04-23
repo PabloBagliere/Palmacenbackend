@@ -12,3 +12,5 @@ El enfoque que uso internamente es que las entity de TypeORM, no tiene conexion 
 ## Test
 
 Este mismo usare para probar por primera vez los test unitarios, usando [Jest](https://jestjs.io/) y [SuperTest](https://www.npmjs.com/package/supertest). Todo esto con Typescript.
+
+Las prubas ya echas son de todo las de rutas roles
