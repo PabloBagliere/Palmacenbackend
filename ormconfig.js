@@ -23,7 +23,7 @@ module.exports = [
     host: "localhost",
     type: "postgres",
     port: 5432,
-    username: "Test",
+    username: "test",
     password: "123456",
     database: "almacen-test",
     synchronize: true,

@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 import { CreateTypeormCon } from "./configs/database.config";
 CreateTypeormCon().then( () => {
   console.log("conectado success")
